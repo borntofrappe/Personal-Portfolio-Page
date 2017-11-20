@@ -10,7 +10,7 @@ Website to fulfill the second task in the front end development certification fo
   4. it is possible to reach different sections with navigation buttons
   
   
-## Personal solution (coming soon)
+## [Personal solution](https://codepen.io/borntofrappe/full/XzZqVO/)
 #### Portfolio page divided into three sections
 1. welcome 
 2. projects
