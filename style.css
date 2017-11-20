@@ -1,0 +1,267 @@
+/*
+import lato from google fonts
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/*
+remove padding and margin from html, body, and container fluid
+apply lato and avoid overflow on the x axis (horizontal transition averted)
+also add as a primary color the reddish orange hue of EE370F
+*/
+html, body, .container-fluid {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  color: #EE370F;
+}
+
+/*
+for the navigation bar, force the background color of white
+also force the disappearance of the border and the appearance of only border-bottom
+of a greyish color
+add some padding to avoid the navbar header and the reference links hitting the border of the page
+*/
+nav {
+  background-color: #FFF !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(0,0,0,0.2) !important;
+  padding: 0 18px;
+}
+/*
+force the color of black to the text next to the icon
+this can be substituted by an image with both the logo and the text in it
+*/
+nav .navbar-brand {
+  color: rgba(0,0,0,0.9) !important;
+}
+
+/*
+for the reference links, transform text to uppercase
+apply the EE color,
+bold text and
+include a linear transition lasting half a second (upon hovering change properties of color)
+*/
+#navbar-to-collapse li a {
+  text-transform: uppercase;
+  color: #EE370F;
+  font-weight: bold;
+  transition: all 0.5s linear;
+}
+/*
+change color to stark red
+*/
+#navbar-to-collapse li a:hover {
+  color: #F00;
+}
+
+/*
+for each section
+  set height to 100vh, covering the entirety of the vertical viewport
+  set background properties  that will be couple with the background images following for each separate inividual section
+  size to cover
+  position to center in both axis
+  without repeating
+
+  also add position relative to move around content in each section
+*/
+.section {
+ height: 100vh;
+ background-size: cover;
+ background-position: center center;
+ background-repeat: no-repeat;
+ position: relative;
+}
+/*
+for each individual section apply a different background image
+*/
+#welcome {
+ background-image: url(https://static.pexels.com/photos/128299/pexels-photo-128299.jpeg);
+}
+#projects {
+  background-image: url(https://static.pexels.com/photos/139259/pexels-photo-139259.jpeg);
+}
+#about {
+  background-image: url(https://static.pexels.com/photos/33999/pexels-photo.jpg);
+}
+  /*
+  for the divider
+    set height to a reasonable px amount
+    pad content to better center it
+    place a repeating linear gradient for the background
+    and a border on top and on bottom to merge the different sections
+  */
+   .divide {
+     padding-top: 25px;
+     height: 125px;
+     background-image:
+       repeating-linear-gradient(
+         -45deg,
+         rgba(0,0,0,0.02),
+         rgba(0,0,0,0.02) 10px,
+         rgba(0,0,0,0.04) 10px,
+         rgba(0,0,0,0.04) 20px /* determines size */
+       );
+     border-top: 8px solid rgba(0,0,0,0.1);
+     border-bottom: 8px solid rgba(0,0,0,0.1);
+   }
+
+/*
+for every card set a background color of white
+add margin to distance from the outside content
+padding vertically and more horizontally
+mildly increase letter spacing
+set box shadow of grey color
+and position to absolute
+! specify the coordinates for each separate card, as found in the different sections
+*/
+.card {
+   background-color: #FFF;
+   margin: 10px;
+   padding: 12px 15px;
+   letter-spacing: 1.2px;
+   box-shadow: 3px 2px 20px rgba(0,0,0,0.2);
+   position: absolute;
+ }
+/*
+for the header into the card, enlarge the text and make it bold
+*/
+ .card h2 {
+    font-size: 5rem;
+    font-weight: bold;
+ }
+/*
+for the card in the welcome section, set the div to the bottom and to the left
+*/
+ #welcome .card {
+   bottom: 25px;
+   left: 32px;
+ }
+/*
+for the card in the project section, set the div to the top and to the right
+*/
+ #projects .card {
+   top: 25px;
+   right: 46px;
+ }
+/*
+for the card in the about section, set the div to the top and to the right
+*/
+ #about .card {
+   top: 25px;
+   right: 46px;
+ }
+/*
+for the second card in the about section, set the div to the bottom and to the right
+*/
+ #about .social-card {
+   background-color: #FFF;
+   margin: 10px;
+   padding: 12px 15px;
+   letter-spacing: 1.2px;
+   box-shadow: 3px 2px 20px rgba(0,0,0,0.2);
+   position: absolute;
+   bottom: 55px;
+   right: 46px;
+ }
+
+/*
+for the row in the project section, set position to absolute and stick it to the bottom
+far away from the top card
+*/
+ #projects .row {
+   position: absolute;
+   bottom: 20px;
+ }
+
+ /*
+for the thumbnail container, add margin to create distance among the containers in the row
+set position relative as to freely manouver the nested button to the bottom right
+! specify the coordinates for the button
+ */
+ .thumbnail {
+   margin: 12px;
+   position: relative;
+ }
+/*
+for the thumbnail header simply capitalize text
+*/
+ .thumbnail h3 {
+   text-transform: capitalize;
+ }
+ /*
+for the button in the thumbnail, style the anchor link as follows
+- text to uppercase
+- without text decoration whatsoever
+- of color white (to be switched to red upon hovering)
+- background color of red (to be switched to white upon hovering)
+- solid border of white color (to be switched to red upon hovering)
+- some padding
+- box shadow of red color (to be switched to white upon hovering)
+- position absolute to place the link to the bottom right of the parent container
+- linear transition to animate upon hovering
+ */
+ .thumbnail a {
+   text-transform: uppercase;
+   text-decoration: none;
+   color: #FFF;
+   background-color: #EE370F;
+   border: 1px solid #FFF;
+   padding: 8px 12px;
+   box-shadow: 2px 2px #EE370F;
+   position: absolute;
+   bottom: 12px;
+   right: 15px;
+   transition: all 0.2s linear;
+ }
+ /*
+upon hovering flip the color as described in the previous comment.
+plus elevate the link and move it ever so slightly to the left
+ */
+ .thumbnail a:hover {
+   color: #EE370F;
+   background-color: #FFF;
+   border: 1px solid #EE370F;
+   box-shadow: 7px 5px #EE370F;
+   bottom: 15px;
+   right: 19px;
+ }
+
+
+
+ /*
+ for the social icon div containers, set display to inline block
+ as to show the divs side by side
+ */
+ #about .social-icon {
+   display: inline-block;
+   padding: 12px;
+ }
+ /*
+for the linkable icons in the social media section
+remove text decoration,
+inherit color (to be switched to white upon hovering)
+beside some padding and margin,
+enlarge font size
+set background color to white (to be switched to red upon hovering)
+border radius to 50% (creating a circle if width and height match)
+transition to smooth the change in color upon hovering
+ */
+#about .social-icon a {
+   text-decoration: none;
+   color: inherit;
+   padding: 10px;
+   margin: 4px;
+   font-size: 5.5rem;
+   background-color: #FFF;
+   border-radius: 50%;
+   transition: all 0.3s linear;
+ }
+ /*
+change colors as specified in the comment above
+ */
+  #about .social-icon a:hover {
+    color: #FFF;
+    background-color: #EE370F;
+  }
